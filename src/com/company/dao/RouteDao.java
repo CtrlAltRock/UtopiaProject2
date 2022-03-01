@@ -126,7 +126,7 @@ public class RouteDao implements AbstractDao<Route> {
     @Override
     public Route update(Route r, Connection conn) {
         RouteDao ud = new RouteDao();
-        String sql = "update " + ud.dbName + " set " + ud.buildString(r) + " where id = " + r.getId();
+        String sql = "update " + ud.dbName + " set " + ud.buildStringUpdate(r) + " where id = " + r.getId();
         try {
             Statement stmt = conn.createStatement();
             int Return = stmt.executeUpdate(sql);

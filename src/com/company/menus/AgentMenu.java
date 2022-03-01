@@ -29,7 +29,7 @@ public class AgentMenu {
                 BookingAgent ba = (BookingAgent)iter.next();
                 Booking b = bad.getBooking(ba);
                 bList.add(b);
-            };
+            }
             return TravelerMenu.flightManageMenu(u, bList);
         };
     }

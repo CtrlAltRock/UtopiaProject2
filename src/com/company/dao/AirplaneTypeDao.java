@@ -92,7 +92,7 @@ public class AirplaneTypeDao implements AbstractDao<AirplaneType>{
     @Override
     public AirplaneType update(AirplaneType a, Connection conn) {
        AirplaneTypeDao ud = new AirplaneTypeDao();
-        String sql = "update " + ud.dbName + " set " + ud.buildString(a) + " where id = " + a.getId();
+        String sql = "update " + ud.dbName + " set " + ud.buildStringUpdate(a) + " where id = " + a.getId();
         try {
             Statement stmt = conn.createStatement();
             stmt.executeUpdate(sql);

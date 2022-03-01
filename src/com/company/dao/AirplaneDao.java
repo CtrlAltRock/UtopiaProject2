@@ -1,8 +1,6 @@
 package com.company.dao;
 
 import com.company.beans.Airplane;
-import com.company.beans.User;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -94,7 +92,7 @@ public class AirplaneDao implements AbstractDao<Airplane>{
     @Override
     public Airplane update(Airplane a, Connection conn) {
         AirplaneDao ud = new AirplaneDao();
-        String sql = "update " + ud.dbName + " set " + ud.buildString(a) + " where id = " + a.getId();
+        String sql = "update " + ud.dbName + " set " + ud.buildStringUpdate(a) + " where id = " + a.getId();
         try {
             Statement stmt = conn.createStatement();
             int Return = stmt.executeUpdate(sql);
